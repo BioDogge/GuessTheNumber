@@ -1,7 +1,0 @@
-{
-  "GameSettings": {
-    "MinNumber": 1,
-    "MaxNumber": 100,
-    "Attempts": 7
-  }
-}
