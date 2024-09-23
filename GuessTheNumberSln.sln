@@ -10,9 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL.Implementations", "BLL.Implementations\BLL.Implementations.csproj", "{4514BC3B-59B3-4426-8906-CAB122E87442}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{7B5C29DE-2CFF-4503-B33F-9EB3FDAE26EB}"
-	ProjectSection(SolutionItems) = preProject
-		BLL.Implementations\settings.json = BLL.Implementations\settings.json
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{2A3B5BDA-DCDC-4852-BCD5-77D4ED1A0AB2}"
 EndProject

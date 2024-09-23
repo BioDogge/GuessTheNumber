@@ -4,14 +4,12 @@ namespace BLL.Implementations
 {
 	public class Game
 	{
-		private readonly INumberGenerator _numberGenerator;
 		private readonly IUserView _userView;
 		private readonly GameSettings _settings;
 		private int _targetValue;
 
 		public Game(INumberGenerator numberGenerator, IUserView userView, GameSettings settings)
 		{
-			_numberGenerator = numberGenerator;
 			_userView = userView;
 			_settings = settings;
 			_targetValue = numberGenerator.GenerateNumber(settings.MinNumber, settings.MaxNumber);
@@ -46,10 +44,10 @@ namespace BLL.Implementations
 
 		private void ShowHelloMessage()
 		{
-			const string FIRST_MESSAGE = "**Добро пожаловать в игру \"Угадай число\"!**";
+			const string FIRST_MESSAGE = "**Добро пожаловать в игру \"Угадай число\"!**\n";
 
 			var numberRangeMessage = $"Диапазон чисел: от {_settings.MinNumber} до {_settings.MaxNumber}.\n";
-			var attemptsMessage = $"Количество ваших попыток: {_targetValue}.";
+			var attemptsMessage = $"Количество ваших попыток: {_settings.Attempts}.";
 
 			var helloMessage = FIRST_MESSAGE + numberRangeMessage + attemptsMessage;
 

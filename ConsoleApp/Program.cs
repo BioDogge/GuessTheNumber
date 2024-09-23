@@ -1,7 +1,6 @@
 ﻿using BLL.Abstractions;
 using BLL.Implementations;
 using Microsoft.Extensions.Configuration;
-using System.Text.Json;
 
 namespace ConsoleApp
 {
@@ -25,11 +24,18 @@ namespace ConsoleApp
 
 		private static GameSettings GetGameSettings(IConfigurationRoot configuration)
 		{
-			var settings = configuration.GetSection("GameSettings").Value;
+			var config = configuration.GetRequiredSection("GameSettings");
 
-			return settings is not null
-				? JsonSerializer.Deserialize<GameSettings>(settings)!
-				: new GameSettings();
+			var attempts = int.Parse(config[nameof(GameSettings.Attempts)]!);
+			var minValue = int.Parse(config[nameof(GameSettings.MinNumber)]!);
+			var maxValue = int.Parse(config[nameof(GameSettings.MaxNumber)]!);
+
+			return new GameSettings
+			{
+				Attempts = attempts,
+				MinNumber = minValue,
+				MaxNumber = maxValue
+			};
 		}
 	}
 }
